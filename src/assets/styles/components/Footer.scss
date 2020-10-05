@@ -1,0 +1,33 @@
+@import "./../Vars.scss";
+@import "./../Media.scss";
+footer {
+    z-index: 2;
+    align-items: center;
+    background: $main-color;
+    color: white;
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    top: 0px;
+    width: 100%;
+    & span {
+        margin-left: 30px;
+        width: 200px;
+        color: #fff;
+    }
+    .footer__menu {
+        margin-right: 30px;
+        text-align: right;
+        ul {
+            li {
+                display: inline-block;
+                list-style-type: none;
+                text-align: left;
+                a {
+                    color: #fff;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}

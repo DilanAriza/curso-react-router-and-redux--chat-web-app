@@ -1,0 +1,74 @@
+@import "./../Vars.scss";
+@import "./../Media.scss";
+.chats {
+    height: 80vh;
+    background-color: $main-color;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    .slidebar {
+        z-index: 1;
+        padding-top: 10px;
+        width: 20vw;
+        background-color: $main-color;
+        height: 100%;
+        // position: fixed;
+        overflow: auto;
+        height: 80vh;
+    }
+    .chat__banner {}
+    .chat__banner__container {
+        width: 80vw;
+        overflow: auto;
+        height: 70vh;
+        justify-content: center;
+        align-self: center;
+        padding: 20px;
+    }
+    .chat__send {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        width: 80vw;
+        background-color: $main-color;
+        border-top: 2px solid #ffffff;
+        input {
+            width: 40%;
+            height: 40px;
+            margin-left: 20px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+            &:focus {
+                border: 1px solid $main-color;
+            }
+        }
+        button {
+            width: 10%;
+            height: 30px;
+            margin-right: 20px;
+            background-color: $main-color;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            transition: all .2s;
+            &:focus {
+                transition: all .2s;
+                background-color: #ffffff;
+                color: $main-color;
+                border: 1px solid $main-color;
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background: $main-color;
+}
