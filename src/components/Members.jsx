@@ -8,11 +8,15 @@ const Members = (props) => {
 
     const { membersList } = props;
     
+    const getRamdom = () => {
+        return Math.random() * (20000 - 10000) + 10000; 
+    }
+
     return (
         <div className="members">
             {membersList.map(member=>
             <CardLink 
-                key={membersList.id}
+                key={getRamdom()}
                 to="/members"
                 type="chats"
                 titleCard={member.name}
