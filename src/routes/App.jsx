@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import Layout from '../components/Layout';
 import Chats from '../components/Chats';
+import Members from '../components/Members';
 
 //Styles
 import '../assets/styles/App.scss'
@@ -16,6 +17,8 @@ const App = () =>(
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/chats" component={Chats} />
+                <Route path="/chat/:id" component={Chats} />
+                <Route path="/members" component={Members} />
             </Switch>
         </Layout>
     </BrowserRouter>

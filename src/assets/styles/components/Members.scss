@@ -1,0 +1,12 @@
+@import "./../Vars.scss";
+@import "./../Media.scss";
+.members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 80vh;
+    background-color: $main-color;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

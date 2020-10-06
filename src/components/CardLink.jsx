@@ -4,7 +4,6 @@ import '../assets/styles/components/Card.scss';
  
 const CardLink = props => {
     const {titleCard, descriptionCard, to, type, classTo} = props;
-    console.log(classTo);
     return(
         <>
         {
