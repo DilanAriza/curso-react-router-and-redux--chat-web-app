@@ -16,9 +16,39 @@ const Chats = (props) => {
     const {myChats} = props;
     const {id} = props.match.params;
 
-    //Convert the chat to messages list
-    const chatMessages = myChats.filter(item => item.id === Number(id[0]));
-    const messages = (chatMessages.shift()).messages;
+    const renderChats = () =>{
+        if(id){
+            const chatMessages = myChats.filter(item => item.id === Number(id[0]));
+            const messages = (chatMessages.shift()).messages;
+
+            return messages.map(item => 
+                (userId === item.message_id_user_send) ?
+                <CardLink
+                    key={getRamdom()}
+                    classTo="chat__user__2"
+                    type="chats__message"
+                    descriptionCard={item.message_content}
+                ></CardLink>:
+                <CardLink 
+                    key={getRamdom()}
+                    classTo="chat__user__1"
+                    type="chats__message"
+                    descriptionCard={item.message_content}
+                ></CardLink>
+            )
+        }else{
+            return <CardLink 
+                key={getRamdom()}
+                type="home"
+                to="/chats"
+                titleCard="Bienvenido"
+                descriptionCard="Seleciona un Chat para ver los mensajes"
+            ></CardLink>
+        }
+    }
+
+    
+
 
     const getRamdom = () => {
         return Math.random() * (20000 - 10000) + 10000; 
@@ -39,23 +69,31 @@ const Chats = (props) => {
             </div>
             <div className="chat__banner">
                 <div className="chat__banner__container">
-                    {
-                        messages.map(item => 
-                            userId === item.message_id_user_send ?
-                            <CardLink
-                                key={getRamdom()}
-                                classTo="chat__user__2"
-                                type="chats__message"
-                                descriptionCard={item.message_content}
-                            ></CardLink>:
-                            <CardLink 
-                                key={getRamdom()}
-                                classTo="chat__user__1"
-                                type="chats__message"
-                                descriptionCard={item.message_content}
-                            ></CardLink>
-                        )
-                    }
+                    {renderChats()}
+                    {/* {
+                    (id) ? messages.map(item => 
+                        userId === item.message_id_user_send ?
+                        <CardLink
+                            key={getRamdom()}
+                            classTo="chat__user__2"
+                            type="chats__message"
+                            descriptionCard={item.message_content}
+                        ></CardLink>:
+                        <CardLink 
+                            key={getRamdom()}
+                            classTo="chat__user__1"
+                            type="chats__message"
+                            descriptionCard={item.message_content}
+                        ></CardLink>
+                    ):
+                        <CardLink 
+                            key={getRamdom()}
+                            type="home"
+                            to="/</div>"
+                            titleCard="Bienvenido"
+                            descriptionCard="Seleciona un Chat para ver los mensajes"
+                        ></CardLink>
+                    } */}
                 </div>
                 <div className="chat__send">
                     <input 
